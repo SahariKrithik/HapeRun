@@ -23,13 +23,19 @@ html, body {
 
 #game-heading {
   font-family: 'Press Start 2P', monospace;
-  font-size: 1rem;
+  font-size: 1.5rem; /* ⬅️ Slightly larger */
   color: #222;
-  transform: skewX(6deg);
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
   text-align: center;
+
+  /* ✅ 3D Effect with multi-layered shadows */
+  text-shadow:
+    1px 1px 0 #aaa,
+    2px 2px 0 #888,
+    3px 3px 0 #666;
 }
+
 
 #unity-container {
   display: flex;
