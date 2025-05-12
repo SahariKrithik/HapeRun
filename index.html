@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>{{ PRODUCT_NAME }}</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <title>Hape Runner 2D</title>
     <style>
       #custom-loader {
         position: fixed;
@@ -31,14 +29,13 @@
     </style>
   </head>
   <body>
-    <!-- Custom Loading Screen -->
     <div id="custom-loader">
-      <p>Loading {{ PRODUCT_NAME }}...</p>
+      <p>Loading Hape Runner 2D...</p>
       <div class="spinner"></div>
     </div>
 
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1440 height=810></canvas>
+      <canvas id="unity-canvas" width="1440" height="810"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -49,7 +46,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">{{ PRODUCT_NAME }}</div>
+        <div id="unity-build-title">Hape Runner 2D</div>
       </div>
     </div>
 
@@ -81,17 +78,17 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/{{ LOADER_FILENAME }}";
+      var loaderUrl = buildUrl + "/HapeRunner2D.loader.js";
       var config = {
-        devicePixelRatio: 1,
-        dataUrl: buildUrl + "/{{ DATA_FILENAME }}",
-        frameworkUrl: buildUrl + "/{{ FRAMEWORK_FILENAME }}",
-        codeUrl: buildUrl + "/{{ CODE_FILENAME }}",
+        dataUrl: buildUrl + "/HapeRunner2D.data.unityweb",
+        frameworkUrl: buildUrl + "/HapeRunner2D.framework.js.unityweb",
+        codeUrl: buildUrl + "/HapeRunner2D.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "{{ COMPANY_NAME }}",
-        productName: "{{ PRODUCT_NAME }}",
-        productVersion: "{{ PRODUCT_VERSION }}",
+        companyName: "F8__Player",
+        productName: "Hape Runner 2D",
+        productVersion: "1.0",
         showBanner: unityShowBanner,
+        devicePixelRatio: 1
       };
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -117,7 +114,7 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          customLoader.style.display = "none"; // ✅ Hide custom loader
+          customLoader.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
           };
