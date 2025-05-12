@@ -10,22 +10,23 @@
 
   <style>
     html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    background: #B3B4B3;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-   }
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background: #B3B4B3;
+      font-family: 'Press Start 2P', monospace;
+    }
 
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     #game-heading {
-      font-family: 'Press Start 2P', monospace;
       font-size: 1.5rem;
       color: #222;
-      margin-bottom: 1.5rem;
+      margin: 2rem 0 1rem;
       letter-spacing: 1px;
       text-align: center;
       text-shadow:
@@ -40,10 +41,8 @@
       align-items: center;
       width: 100%;
       max-width: 100vw;
-      max-height: 100vh;
       padding: 0 2rem;
       box-sizing: border-box;
-      overflow: hidden;
       gap: 1.5rem;
     }
 
@@ -65,18 +64,17 @@
     }
 
     #controls-box {
-    background-color: #f4f4f4;
-    border-radius: 14px;
-    padding: 1.25rem 2rem;
-    text-align: center;
-    font-family: 'Press Start 2P', monospace;
-    font-size: 0.75rem; /* Increased size */
-    line-height: 2;
-    color: #222;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-    max-width: 95%;
-    margin-top: 1.5rem;
-}
+      background-color: #f4f4f4;
+      border-radius: 14px;
+      padding: 1.5rem 2.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      line-height: 2;
+      color: #222;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      max-width: 90%;
+      margin: 2rem auto 3rem;
+    }
 
     #controls-box h3 {
       margin-top: 0;
@@ -120,16 +118,6 @@
       to { transform: rotate(360deg); }
     }
 
-    @keyframes fadeInScale {
-      0% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-
     @keyframes fadeLoop {
       0%, 100% { opacity: 0.2; }
       50% { opacity: 1; }
@@ -147,16 +135,13 @@
 
   <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas" width="1440" height="810"></canvas>
-
     <div id="unity-loading-bar">
       <div id="unity-logo"></div>
       <div id="unity-progress-bar-empty">
         <div id="unity-progress-bar-full"></div>
       </div>
     </div>
-
     <div id="unity-warning"></div>
-
     <div id="unity-footer">
       <div id="unity-webgl-logo"></div>
       <div id="unity-fullscreen-button"></div>
@@ -164,21 +149,20 @@
         <img src="HapeLogo_Transparent.png" alt="Hape Runner 2D Logo" />
       </div>
     </div>
+  </div>
 
-    <!-- 👇 Added Instructions Box -->
-    <div id="controls-box">
-      <h3>Controls</h3>
-      <p>
-        <span class="key-icon">W</span>
-        <span class="key-icon">↑</span>
-        <span class="key-icon">Space</span> – Jump
-      </p>
-      <p>
-        <span class="key-icon">S</span>
-        <span class="key-icon">↓</span> – Fall Down
-      </p>
-    </div>
-
+  <!-- Instructions Box moved outside for better spacing -->
+  <div id="controls-box">
+    <h3>Controls</h3>
+    <p>
+      <span class="key-icon">W</span>
+      <span class="key-icon">↑</span>
+      <span class="key-icon">Space</span> – Jump
+    </p>
+    <p>
+      <span class="key-icon">S</span>
+      <span class="key-icon">↓</span> – Fall Down
+    </p>
   </div>
 
   <script>
