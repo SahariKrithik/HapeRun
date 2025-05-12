@@ -13,7 +13,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: #7F807F;
+  background: #B3B4B3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,12 +44,16 @@ html, body {
 
   }
 
- #unity-build-title img {
-  max-height: 50px; /* ⬅️ Smaller than before */
+#unity-build-title img {
+  max-height: 40px;
   height: auto;
   width: auto;
   display: block;
+  opacity: 0;
+  animation: fadeInScale 1s ease-out forwards, float 2.5s ease-in-out infinite;
+  animation-delay: 0s, 1s; /* fade+scale first, then float */
 }
+
 
 
   #custom-loader {
@@ -75,6 +79,27 @@ html, body {
   @keyframes spin {
     to { transform: rotate(360deg); }
   }
+
+  @keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
 </style>
 
 
