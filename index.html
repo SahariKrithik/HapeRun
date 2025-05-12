@@ -49,10 +49,9 @@ html, body {
   height: auto;
   width: auto;
   display: block;
-  opacity: 0;
-  animation: fadeInScale 1s ease-out forwards, float 2.5s ease-in-out infinite;
-  animation-delay: 0s, 1s; /* fade+scale first, then float */
+  animation: fadeLoop 2.5s ease-in-out infinite;
 }
+
 
 
 
@@ -99,6 +98,16 @@ html, body {
     transform: translateY(-6px);
   }
 }
+
+@keyframes fadeLoop {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 
 </style>
 
