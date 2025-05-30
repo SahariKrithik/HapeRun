@@ -194,16 +194,19 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/{{ LOADER_FILENAME }}";
       var config = {
-        dataUrl: buildUrl + "/{{ DATA_FILENAME }}",
-        frameworkUrl: buildUrl + "/{{ FRAMEWORK_FILENAME }}",
-        codeUrl: buildUrl + "/{{ CODE_FILENAME }}",
+        dataUrl: buildUrl + "/HapeRun.data.unityweb",
+        frameworkUrl: buildUrl + "/HapeRun.framework.js.unityweb",
+        codeUrl: buildUrl + "/HapeRun.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "{{ COMPANY_NAME }}",
-        productName: "{{ PRODUCT_NAME }}",
-        productVersion: "{{ PRODUCT_VERSION }}",
-        showBanner: unityShowBanner,
+        companyName: "YourCompany",
+        productName: "Hape Run",
+        productVersion: "1.0",
+        showBanner: function () {},
         devicePixelRatio: 1
+
       };
+
+      
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         var meta = document.createElement('meta');
